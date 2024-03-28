@@ -18,6 +18,8 @@ class LoginActivity : AppCompatActivity() {
         val view=binding.root
         setContentView(view)
 
+        supportActionBar?.hide()
+
         mAuth= FirebaseAuth.getInstance()
 
         binding.signupBtn.setOnClickListener{
