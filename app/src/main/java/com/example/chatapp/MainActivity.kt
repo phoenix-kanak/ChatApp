@@ -1,8 +1,10 @@
 package com.example.chatapp
 
 import android.content.Intent
+import com.example.chatapp.R
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -46,6 +48,8 @@ class MainActivity : AppCompatActivity() {
                 userArray.clear()
                 for(postSnapShot in snapshot.children){
                     val currentUser=postSnapShot.getValue(Users::class.java)
+                    Log.e("Tag",currentUser?.uid.toString())
+                    Log.e("Tag",mAuth.currentUser?.uid!!.toString())
                     if(mAuth.currentUser?.uid!! != currentUser?.uid!!){
                         userArray.add(currentUser)
                     }
@@ -57,8 +61,6 @@ class MainActivity : AppCompatActivity() {
 
             }
         })
-
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

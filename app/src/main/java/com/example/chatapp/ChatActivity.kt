@@ -75,6 +75,9 @@ class ChatActivity : AppCompatActivity() {
             }
             messageBox.setText("")
         }
+        binding.attachmentBtn.setOnClickListener{
+
+        }
 
 
 
